@@ -9,6 +9,12 @@ namespace CapstoneWIE
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapRoute(
+            //    name: "index",
+            //    url: "{action}",
+            //    defaults: new { controller = "Home", action = "DefaultIndex"}
+            //);
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

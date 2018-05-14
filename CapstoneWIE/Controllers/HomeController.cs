@@ -8,5 +8,11 @@ namespace CapstoneWIE.Controllers
         {
             return View();
         }
+
+        public ActionResult DefaultIndex()
+        {
+            return View();
+        }
+
     }
 }
