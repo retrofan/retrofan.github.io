@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home Page (Admin)";
+}
+
+<div ng-controller="adminBlogController">
+    <div class="container">
+        <div style="padding-top: 200px" class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6">
+                <div ng-repeat="b in blogPosts">
+                    <br/>
+                    <a data-ng-href="@Url.Action("BlogDetails", "Blog")/{{b.Id}}">
+                        <h2>
+                            <b>{{b.Title}}</b>
+                        </h2>
+                    </a>
+                    <span ng-bind="b.PostDate | date:'mediumDate'"></span>
+                    <p ng-bind-html="b.Content"></p>
+                    <span ng-repeat="t in b.Tags">
+                        <button class="btn btn-sm btn-default" ng-bind="t.Name"></button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <h2 style="padding-top: 100px">
+                    <b>About Us</b>
+                </h2>
+                <p>
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                    there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
+                    a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                    It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+                    Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day
+                    however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
+                </p>
+                <span ng-repeat="t in AllTags"></span>
+            </div>
+        </div>
+    </div>
+</div>
+

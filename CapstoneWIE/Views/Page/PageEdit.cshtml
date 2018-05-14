@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNet.Identity
+@model CapstoneWIE.DataLayer.Models.Page
+
+@{
+    ViewBag.Title = "PageEdit";
+}
+
+
+<div ng-controller="pageController">
+    <div class="container" ng-init="setPage('@Model.Id')">
+        <form ng-submit="editPage()" method="post">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <div class="form-inline" style="padding-bottom: 20px">
+                        <label style="padding-top: 50px">Title:</label>
+                        <input type="text" name="Title" class="form-control" ng-model="page.Title" />
+                        <div style="padding-left: 35px">
+                            <div class="alert-danger" style="width: 17%;" ng-show="alert.title.status" ng-bind="alert.title.message"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10" style="width: 80%; margin-left:3%">
+                    <textarea ui-tinymce="tinymceOptions" ng-model="page.Content"></textarea>
+                    <div ng-show="alert.content.status" ng-bind="alert.content.message" class="alert-danger"></div>
+                    <br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8"></div>
+                <div style="text-align: right" class="col-sm-3">
+                    <button type="submit" class="btn btn-sm btn-primary">Save Changes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

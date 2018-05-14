@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "ViewPendingPosts";
+}
+
+<div ng-controller="adminController">
+    <div class="container">
+        <div class="row">
+            <br/>
+            <br/>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <div class="well" ng-repeat="b in blogPosts" style="text-align:center">
+                    <div style="overflow-wrap: break-word">
+                        <a data-ng-href="@Url.Action("BlogDetails", "Blog")/{{b.Id}}">
+                            <h2>
+                                <b>{{b.Title}}</b>
+                            </h2>
+                        </a>
+                        <p style="text-align: left" ng-bind-html="b.Content"></p>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <span style="padding-left: 5px;" ng-repeat="t in b.Tags">
+                                <button class="btn btn-sm btn-default" ng-bind="t.Name"></button>
+                            </span>
+                        </div>
+
+                        
+                        <div style="text-align: center; padding-top: 10px">
+                            <span ng-click="Approve(b)" class="btn btn-primary btn-sm">
+                                Approve
+                            </span>
+
+                            <span ng-click="Deny(b)" class="btn btn-primary btn-sm">
+                                Deny
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

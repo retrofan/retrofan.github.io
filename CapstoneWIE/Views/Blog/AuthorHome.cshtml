@@ -1,0 +1,63 @@
+﻿@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "AuthorHome";
+}
+<div ng-controller="authorController">
+    <div class="container">
+        <div class="row">
+            <br />
+            <br />
+            <div class="col-sm-2">
+                <div style="padding-bottom: 5px">
+                    <button class="btn btn-default btn-block" ng-click="sortByPending()">Show Pending</button>
+                </div>
+                <div style="padding-bottom: 5px">
+                    <button class="btn btn-default btn-block" ng-click="sortByDraft()">Show Drafts</button>
+                </div>
+                <div style="padding-bottom: 5px">
+                    <button class="btn btn-default btn-block" ng-click="showAll()">Show All</button>
+                </div>
+                <div  style="text-align: right; padding-top: 5px;">
+                    <a href="@Url.Action("AddBlog", "Blog")"><img class="imagedropshadow img-circle" src="http://imgur.com/VKgge3V.png" style="width: 80px" /></a>
+                </div>
+            </div>
+            <div class="col-sm-8" style="overflow-wrap: break-word">
+                <div class="well" ng-repeat="b in blogsDisplayed" style="text-align: center">
+                    <br />
+                    <a data-ng-href="@Url.Action("BlogDetails", "Blog")/{{b.Id}}">
+                        <h2>
+                            <b>{{b.Title}}</b>
+                        </h2>
+                    </a>
+                    <p ng-bind-html="b.Content" style="text-align: left"></p>
+                    <span ng-repeat="t in b.Tags">
+                        <span style="padding-left: 5px">
+                            <button ng-click="sortByTag(t.Id)" class="btn btn-sm btn-default" ng-bind="t.Name"></button>
+                        </span>
+                    </span>
+                    <div style="padding-top: 10px;">
+                        <button class="btn btn-primary" ng-show="b.BlogState == 0" ng-click="submitDraft(b.Id)">Submit Draft</button>@*Not currently working correctly. We need to pass in the whole blog post not just the id.*@
+                        @*<button class="btn btn-primary" ng-show="b.BlogState == 0" ng-click="editDraft(b.Id)">Edit Draft</button>*@
+                        <a href="/Blog/EditBlog/{{b.Id}}" class="btn btn-primary">Edit</a>
+                        <button class="btn btn-danger" ng-click="deletePost(b)">Delete</button>
+                        <div ng-show="b.BlogState == 1">Pending Review</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 20px">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-9">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <style>
+        a:hover img.imagedropshadow {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+    </style>
+}

@@ -1,0 +1,38 @@
+﻿@using System.Net.Configuration
+@model CapstoneWIE.DataLayer.Models.Page
+
+@{
+    ViewBag.Title = "PageTemplate";
+}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <br />
+                <h1>
+                    <strong>
+                        @Model.Title
+                    </strong>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10" style="overflow-wrap: break-word">
+                <p>
+                    @Html.Raw(Model.Content)
+                </p>
+                <p>
+                    @Model.CreationDate
+                </p>
+                <div ng-controller="pageController">
+                    @if (User.IsInRole("Admin") && Model.ApplicationUserId != null)
+                    {
+                        <button class="btn btn-danger" ng-click="deletePage('@Model.Id')">Delete</button>
+                        @Html.ActionLink("Edit", "PageEdit", "Page", new {id = Model.Id}, new {@class = "btn btn-primary"})
+                    }
+                </div>
+        </div>
+    </div>
+</div>

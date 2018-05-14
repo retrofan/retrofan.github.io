@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapstoneWIE", "CapstoneWIE\CapstoneWIE.csproj", "{C7906677-980A-41BC-938D-02FF27A2288F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapstoneWIE.Tests", "CapstoneWIE.Tests\CapstoneWIE.Tests.csproj", "{00773192-FA0E-4D16-97CB-8B289888A725}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapstoneWIE.DataLayer", "CapstoneWIE.DataLayer\CapstoneWIE.DataLayer.csproj", "{11690872-7AB8-45F5-A338-CCEE14ABBC12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7906677-980A-41BC-938D-02FF27A2288F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7906677-980A-41BC-938D-02FF27A2288F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7906677-980A-41BC-938D-02FF27A2288F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7906677-980A-41BC-938D-02FF27A2288F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00773192-FA0E-4D16-97CB-8B289888A725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00773192-FA0E-4D16-97CB-8B289888A725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00773192-FA0E-4D16-97CB-8B289888A725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00773192-FA0E-4D16-97CB-8B289888A725}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11690872-7AB8-45F5-A338-CCEE14ABBC12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11690872-7AB8-45F5-A338-CCEE14ABBC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11690872-7AB8-45F5-A338-CCEE14ABBC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11690872-7AB8-45F5-A338-CCEE14ABBC12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
